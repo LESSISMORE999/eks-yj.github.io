@@ -44,22 +44,59 @@ html,body,#root,.common_full_width_height{
     background: url(../gsgw/banner.jpg) no-repeat;
     background-size: cover;
 }
-.item {
+.list_item{
     text-align: center;
 }
-.item_img {
+.item {
+    margin: 30px;
+    width: 290px;
     display: inline-block;
+    vertical-align: top;
 }
-.item_content{
-    display: inline-block;
+.item_img {
+    width: 290px;
+}
+.item_content_text {
+    text-align: left;
+    width: 290px;
+}
+.item_title {
+    font-size: large;
+    margin-bottom: 10px;
+}
+.item_description {
+    color: #505050;
 }
 .footer {
     border-top: 1px solid #402863;
+    text-align: center;
+}
+.footer_content{
+    margin: 30px;
+    display: inline-block;
+    vertical-align: top;
 }
 .contact_img {
     display: inline-block;
+    width: 150px;
+}
+.contact_way_name{
+    width: 150px;
+}
+.contact_content{
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: top;
 }
 .contact_text{
-    float: right;
+    text-align: left;
     display: inline-block;
+    color: #402863;
+    vertical-align: top;
+}
+.contact_title{
+    font-size: x-large;
+}
+.contact_item{
+    margin-bottom: 10px;
 }
