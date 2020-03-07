@@ -23,12 +23,19 @@ html,body,#root,.common_full_width_height{
     display: inline-block;
     margin: 10px;
 }
-.welcome {
+.welcome_content {
     display: inline-block;
     float: right;
-    margin: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: right;
+}
+.welcome {
     font-size: xx-large;
     color: #402863;
+}
+.website_into{
+    float: right;
 }
 .website_name{
     color: royalblue;
