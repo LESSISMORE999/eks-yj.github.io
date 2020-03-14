@@ -44,7 +44,7 @@ html,body,#root,.common_full_width_height{
 .banner {
     height: 600px;
     width: 100%;
-    background: url(../res/banner.jpg) no-repeat;
+    background: url(../img/banner.jpg) no-repeat;
     background-size: cover;
 }
 .banner_title{
