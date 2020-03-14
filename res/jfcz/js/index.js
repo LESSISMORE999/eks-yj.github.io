@@ -680,101 +680,7 @@ if (match) {
                         h.enabled = !1,
                             d(D + 1),
                             r.style.display = "none",
-                            C.show(),
-                            // 2. 分享接口
-                            // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
-                            wx.onMenuShareAppMessage({
-                                title: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
-                                desc: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
-                                link: gameurl,
-                                imgUrl: imgUrl,
-                                trigger: function(res) {
-                                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
-                                    // alert('用户点击发送给朋友');
-                                },
-                                success: function(res) {
-                                    var UserInfo = new Object();
-                                    UserInfo.openid = openid;
-                                    UserInfo.shareLevel = D;
-                                    // alert('已分享');
-                                    ga('send', {
-                                        'hitType': 'event', // Required.
-                                        'eventCategory': 'wx', // Required.
-                                        'eventAction': 'onMenuShareAppMessage_' + openid, // Required.
-                                        'eventLabel': JSON.stringify(UserInfo),
-                                        'eventValue': 1
-                                    });
-                                },
-                                cancel: function(res) {
-                                    // alert('已取消');
-                                },
-                                fail: function(res) {
-                                    // alert(JSON.stringify(res));
-                                }
-                            }),
-                            // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
-                            wx.onMenuShareTimeline({
-                                title: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
-                                link: gameurl,
-                                imgUrl: imgUrl,
-                                trigger: function(res) {
-                                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
-                                    // alert('用户点击分享到朋友圈');
-                                },
-                                success: function(res) {
-                                    // alert('已分享');
-                                    var UserInfo = new Object();
-                                    UserInfo.openid = openid;
-                                    UserInfo.shareLevel = D;
-                                    // alert('已分享');
-                                    ga('send', {
-                                        'hitType': 'event', // Required.
-                                        'eventCategory': 'wx', // Required.
-                                        'eventAction': 'onMenuShareTimeline_' + openid, // Required.
-                                        'eventLabel': JSON.stringify(UserInfo),
-                                        'eventValue': 1
-                                    });
-                                },
-                                cancel: function(res) {
-                                    // alert('已取消');
-                                },
-                                fail: function(res) {
-                                    // alert(JSON.stringify(res));
-                                }
-                            }),
-                            // 2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
-                            wx.onMenuShareQQ({
-                                title: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
-                                desc: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
-                                link: gameurl,
-                                imgUrl: imgUrl,
-                                trigger: function(res) {
-                                    // alert('用户点击分享到QQ');
-                                },
-                                complete: function(res) {
-                                    // alert(JSON.stringify(res));
-                                },
-                                success: function(res) {
-                                    // alert('已分享');
-                                    var UserInfo = new Object();
-                                    UserInfo.openid = openid;
-                                    UserInfo.shareLevel = D;
-                                    // alert('已分享');
-                                    ga('send', {
-                                        'hitType': 'event', // Required.
-                                        'eventCategory': 'wx', // Required.
-                                        'eventAction': 'onMenuShareQQ_' + openid, // Required.
-                                        'eventLabel': JSON.stringify(UserInfo),
-                                        'eventValue': 1
-                                    });
-                                },
-                                cancel: function(res) {
-                                    // alert('已取消');
-                                },
-                                fail: function(res) {
-                                    // alert(JSON.stringify(res));
-                                }
-                            })
+                            C.show()
                     })
                 }),
                 h.on("failed", function() {
@@ -790,13 +696,6 @@ if (match) {
                         C.hide(),
                         i.switchStage(1, function() {
                             h.run(D)
-                            // ga('send', {
-                            //     'hitType': 'event', // Required.
-                            //     'eventCategory': 'click', // Required.
-                            //     'eventAction': 'start_' + openid, // Required.
-                            //     'eventLabel': 'other',
-                            //     'eventValue': 1
-                            // })
                         })
                 })
         }
