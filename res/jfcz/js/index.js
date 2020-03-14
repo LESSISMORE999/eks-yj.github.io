@@ -41,7 +41,7 @@ if (match) {
                 b(h, "click", function() {
                     e.fire(g, f)
                 }),
-                    j.innerHTML = d.isAndroid ? "GO" : "▶"
+                    j.innerHTML = "开始"
             }
             var h = a.getElementsByClassName("button")[0],
                 i = a.getElementsByClassName("text")[0],
