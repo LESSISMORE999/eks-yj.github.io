@@ -12,7 +12,7 @@ if (match) {
 
 
 "undefined" == typeof window.define && (window.define = function() {}, window.define.amd = 1),
-    "undefined" == typeof window.$AJB && (window.$AJB = {}),
+"undefined" == typeof window.$AJB && (window.$AJB = {}),
     $AJB.lib = {},
     $AJB.general = {},
     $AJB.page = {},
@@ -36,12 +36,11 @@ if (match) {
     },
     $AJB.general.BeginStage = function() {
         "use strict";
-
         function a(a) {
             function c() {
                 b(h, "click", function() {
-                        e.fire(g, f)
-                    }),
+                    e.fire(g, f)
+                }),
                     j.innerHTML = d.isAndroid ? "GO" : "▶"
             }
             var h = a.getElementsByClassName("button")[0],
@@ -78,7 +77,6 @@ if (match) {
     },
     $AJB.general.Switcher = function() {
         "use strict";
-
         function a(a, b, c) {
             var d, e, f = null,
                 g = !1,
@@ -120,7 +118,6 @@ if (match) {
     },
     $AJB.general.Levels = function() {
         "use strict";
-
         function a(a, b) {
             return function() {
                 var c = 0;
@@ -129,7 +126,6 @@ if (match) {
                 }
             }
         }
-
         function b(a, b) {
             return function() {
                 var c = 0,
@@ -142,7 +138,6 @@ if (match) {
                 }
             }
         }
-
         function c(a, b, c, d) {
             return function() {
                 var e = 0,
@@ -154,14 +149,11 @@ if (match) {
                 }
             }
         }
-
         function d(a) {
             var b = 1;
             return h(document.body, "mousedown", function() {
-                    b = -b
-                }),
-
-
+                b = -b
+            }),
                 function() {
                     var c = 0;
                     return function() {
@@ -169,13 +161,10 @@ if (match) {
                     }
                 }
         }
-
         function e(a, b, c, d) {
             return h(document.body, "mousedown", function() {
-                    d = -d
-                }),
-
-
+                d = -d
+            }),
                 function() {
                     var e = 0,
                         f = +new Date;
@@ -186,7 +175,6 @@ if (match) {
                     }
                 }
         }
-
         function f(a, b, c, d) {
             i[a] = {
                 childs: k[b],
@@ -324,7 +312,6 @@ if (match) {
     },
     $AJB.general.BallQueue = function() {
         "use strict";
-
         function a(a, f, g, h, i) {
             function j() {
                 var b, d, e = k(a),
@@ -333,7 +320,6 @@ if (match) {
                     d.pos(f, g + 3 * d.rad() * b),
                     m.push(d)
             }
-
             function k(a) {
                 for (var b = a, c = []; b--;) c.push(b + 1);
                 return c
@@ -366,7 +352,7 @@ if (match) {
                         if (h) {
                             for (b = n[0].rad(), a = g - 3 * b; h--;) n[h].pos(f, d.simple(n[h].sv, a, n[h].st, 50)),
                                 c = n[n.length - 1].pos().y,
-                                n[h].pos().y === a && (o.fire(e, n[h]), n.splice(h, 1));
+                            n[h].pos().y === a && (o.fire(e, n[h]), n.splice(h, 1));
                             for (; i--;) m[i].pos(f, c + 3 * b * (i + 1))
                         }
                     },
@@ -396,7 +382,6 @@ if (match) {
     },
     $AJB.general.Ball = function() {
         "use strict";
-
         function a(a, c, d, e, f) {
             function g() {
                 var c = b.getTextWidth(a, 0, 0, d, e);
@@ -410,10 +395,10 @@ if (match) {
                 h = {
                     pos: function(a, b) {
                         return "undefined" != typeof a && (i = a),
-                            "undefined" != typeof b && (j = b), {
-                                x: i,
-                                y: j
-                            }
+                        "undefined" != typeof b && (j = b), {
+                            x: i,
+                            y: j
+                        }
                     },
                     scale: function(a) {
                         return "undefined" != typeof a && (f = a),
@@ -472,7 +457,6 @@ if (match) {
     },
     $AJB.general.Core = function() {
         "use strict";
-
         function a(a, d, e, f, g) {
             function h() {
                 for (var a, b, c, d, e = l.length; e--;) a = 3 * Math.cos((l[e].angle + j.angle()) * Math.PI / 180) * m * g + n,
@@ -564,7 +548,6 @@ if (match) {
     },
     $AJB.general.Scene = function() {
         "use strict";
-
         function a(a, b, l, m) {
             function n(a) {
                 var g = a.childs,
@@ -577,11 +560,9 @@ if (match) {
                             f.check(w, a, m) ? (z = a, s()) : !x.ballList.length && r()
                     })
             }
-
             function o() {
                 y && (w.angle(y()), w.update(), x.update())
             }
-
             function p() {
                 var b, c, d, e, f = w.childs(),
                     g = f.length,
@@ -592,7 +573,6 @@ if (match) {
                     e = f[g].ball.pos(),
                     f[g].ball.pos(e.x + c, e.y + d)
             }
-
             function q(a) {
                 var b, c = [25, 15, 20, 15],
                     d = c.length,
@@ -600,15 +580,12 @@ if (match) {
                     f = e / d;
                 for (w.update(), b = 1; d >= b; b++) a > f * b && z.rad(c[b - 1] * m)
             }
-
             function r() {
                 "pass" !== A && (a.style.backgroundColor = "#1CB01A", A = "pass", v = +new Date)
             }
-
             function s() {
                 "fail" !== l && (a.style.backgroundColor = "#B8111C", A = "fail", v = +new Date)
             }
-
             function t() {
                 var a = "to be continued...",
                     c = h.getTextWidth(l, 0, 0, a, 30 * m);
@@ -655,7 +632,6 @@ if (match) {
     },
     $AJB.general.Game = function() {
         "use strict";
-
         function a() {
             var a = document.body.scrollWidth || document.documentElement.scrollWidth,
                 b = document.body.scrollHeight || document.documentElement.scrollHeight;
@@ -667,17 +643,14 @@ if (match) {
                 s.style.height = b + "px",
                 j = b / 560
         }
-
         function b() {
             u.href = B.replace(/#\{level\}/, D)
         }
-
         function c() {
             p.isWeixin ? n(u, "mousedown", function() {
                 w.style.display = ""
             }) : p.isMobile && b()
         }
-
         function d(a) {
             D = +a,
                 o.setValue(z, D),
@@ -685,15 +658,14 @@ if (match) {
                 GlobalLevel = D,
                 C.level(D), !p.isWeixin && p.isMobile && b()
         }
-
         function e() {
             n(document.body, "mousedown", function(a) {
-                    var b;
-                    if (a && a.changedTouches)
-                        for (b = a.changedTouches.length; b--;) h.shot();
-                    else h.shot();
-                    "1" != a.target.getAttribute("data-capture") && q(a)
-                }),
+                var b;
+                if (a && a.changedTouches)
+                    for (b = a.changedTouches.length; b--;) h.shot();
+                else h.shot();
+                "1" != a.target.getAttribute("data-capture") && q(a)
+            }),
                 n(w, "mousedown", function() {
                     w.style.display = "none"
                 }),
@@ -709,7 +681,6 @@ if (match) {
                             d(D + 1),
                             r.style.display = "none",
                             C.show(),
-
                             // 2. 分享接口
                             // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
                             wx.onMenuShareAppMessage({
@@ -741,7 +712,6 @@ if (match) {
                                     // alert(JSON.stringify(res));
                                 }
                             }),
-
                             // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
                             wx.onMenuShareTimeline({
                                 title: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
@@ -772,7 +742,6 @@ if (match) {
                                     // alert(JSON.stringify(res));
                                 }
                             }),
-
                             // 2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
                             wx.onMenuShareQQ({
                                 title: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
@@ -821,17 +790,16 @@ if (match) {
                         C.hide(),
                         i.switchStage(1, function() {
                             h.run(D)
-                                // ga('send', {
-                                //     'hitType': 'event', // Required.
-                                //     'eventCategory': 'click', // Required.
-                                //     'eventAction': 'start_' + openid, // Required.
-                                //     'eventLabel': 'other',
-                                //     'eventValue': 1
-                                // })
+                            // ga('send', {
+                            //     'hitType': 'event', // Required.
+                            //     'eventCategory': 'click', // Required.
+                            //     'eventAction': 'start_' + openid, // Required.
+                            //     'eventLabel': 'other',
+                            //     'eventValue': 1
+                            // })
                         })
                 })
         }
-
         function f() {
             window.clearTimeout(F),
                 h.update(),
@@ -840,7 +808,6 @@ if (match) {
                 i.render(),
                 F = window.setTimeout(f, 1e3 / y)
         }
-
         function g() {
             a(),
                 h = k(document.body, r, x, j),
@@ -867,7 +834,7 @@ if (match) {
             y = 60,
             z = "core-ball-level",
             A = "Core Ball，我已玩到第#{level}关了，你也来试试吧!",
-            B = "sinaweibo://share?content=Core Ball，我已玩到第#{level}关了，你也来试试吧！ http://timelineapp.pointstone.org/coreball/",
+            B = "sinaweibo://share?content=Core Ball，我已玩到第#{level}关了，你也来试试吧！",
             C = m(s),
             D = +o.getValue(z) || 1,
             E = !1,
@@ -887,245 +854,4 @@ if (match) {
         // console.log(myShareTitle);
     },
     $AJB.page.index();
-
 GlobalLevel = $AJB.general.Game().shareLevel;
-
-var ajax = {};
-ajax.x = function() {
-    if (typeof XMLHttpRequest !== 'undefined') {
-        return new XMLHttpRequest();
-    }
-    var versions = [
-        "MSXML2.XmlHttp.5.0",
-        "MSXML2.XmlHttp.4.0",
-        "MSXML2.XmlHttp.3.0",
-        "MSXML2.XmlHttp.2.0",
-        "Microsoft.XmlHttp"
-    ];
-
-    var xhr;
-    for (var i = 0; i < versions.length; i++) {
-        try {
-            xhr = new ActiveXObject(versions[i]);
-            break;
-        } catch (e) {}
-    }
-    return xhr;
-};
-
-ajax.send = function(url, callback, method, data, sync) {
-    var x = ajax.x();
-    x.open(method, url, sync);
-    x.onreadystatechange = function() {
-        if (x.readyState == 4) {
-            callback(x.responseText)
-        }
-    };
-    if (method == 'POST') {
-        x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    }
-    x.send(data)
-};
-
-ajax.get = function(url, data, callback, sync) {
-    var query = [];
-    for (var key in data) {
-        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
-    }
-    ajax.send(url + '?' + query.join('&'), callback, 'GET', null, sync)
-};
-
-ajax.post = function(url, data, callback, sync) {
-    var query = [];
-    for (var key in data) {
-        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
-    }
-    ajax.send(url, callback, 'POST', query.join('&'), sync)
-};
-
-ajax.post('http://timelineapp.pointstone.org/ci/authorize/get_jssdk_info', {
-    url: window.location.href
-}, function(data) {
-    // console.log(data);
-    // alert(data);
-    var jssdk_info_obj = JSON.parse(data);
-
-    wx.config({
-        debug: false,
-        appId: jssdk_info_obj.appid,
-        timestamp: jssdk_info_obj.timestamp,
-        nonceStr: jssdk_info_obj.noncestr,
-        signature: jssdk_info_obj.signature,
-        jsApiList: [
-            'checkJsApi',
-            'onMenuShareTimeline',
-            'onMenuShareAppMessage',
-            'onMenuShareQQ',
-            'onMenuShareWeibo',
-            'hideMenuItems',
-            'showMenuItems',
-            'hideAllNonBaseMenuItem',
-            'showAllNonBaseMenuItem',
-            'translateVoice',
-            'startRecord',
-            'stopRecord',
-            'onRecordEnd',
-            'playVoice',
-            'pauseVoice',
-            'stopVoice',
-            'uploadVoice',
-            'downloadVoice',
-            'chooseImage',
-            'previewImage',
-            'uploadImage',
-            'downloadImage',
-            'getNetworkType',
-            'openLocation',
-            'getLocation',
-            'hideOptionMenu',
-            'showOptionMenu',
-            'closeWindow',
-            'scanQRCode',
-            'chooseWXPay',
-            'openProductSpecificView',
-            'addCard',
-            'chooseCard',
-            'openCard'
-        ]
-    });
-
-    wx.ready(function() {
-
-        // 2. 分享接口
-        // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
-        wx.onMenuShareAppMessage({
-            title: "Core Ball，我已玩到第" + GlobalLevel + "关了，你也来试试吧！",
-            desc: "Core Ball，我已玩到第" + GlobalLevel + "关了，你也来试试吧！",
-            link: gameurl,
-            imgUrl: imgUrl,
-            trigger: function(res) {
-                // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
-                // alert('用户点击发送给朋友');
-            },
-            success: function(res) {
-                var UserInfo = new Object();
-                UserInfo.openid = openid;
-                UserInfo.shareLevel = GlobalLevel;
-                // alert('已分享');
-                ga('send', {
-                    'hitType': 'event', // Required.
-                    'eventCategory': 'wx', // Required.
-                    'eventAction': 'onMenuShareAppMessage_' + openid, // Required.
-                    'eventLabel': JSON.stringify(UserInfo),
-                    'eventValue': 1
-                });
-            },
-            cancel: function(res) {
-                // alert('已取消');
-            },
-            fail: function(res) {
-                // alert(JSON.stringify(res));
-            }
-        });
-
-        // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
-        wx.onMenuShareTimeline({
-            title: "Core Ball，我已玩到第" + GlobalLevel + "关了，你也来试试吧！",
-            link: gameurl,
-            imgUrl: imgUrl,
-            trigger: function(res) {
-                // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
-                // alert('用户点击分享到朋友圈');
-            },
-            success: function(res) {
-                // alert('已分享');
-                var UserInfo = new Object();
-                UserInfo.openid = openid;
-                UserInfo.shareLevel = GlobalLevel;
-                // alert('已分享');
-                ga('send', {
-                    'hitType': 'event', // Required.
-                    'eventCategory': 'wx', // Required.
-                    'eventAction': 'onMenuShareTimeline_' + openid, // Required.
-                    'eventLabel': JSON.stringify(UserInfo),
-                    'eventValue': 1
-                });
-            },
-            cancel: function(res) {
-                // alert('已取消');
-            },
-            fail: function(res) {
-                // alert(JSON.stringify(res));
-            }
-        });
-
-        // 2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
-        wx.onMenuShareQQ({
-            title: "Core Ball，我已玩到第" + GlobalLevel + "关了，你也来试试吧！",
-            desc: "Core Ball，我已玩到第" + GlobalLevel + "关了，你也来试试吧！",
-            link: gameurl,
-            imgUrl: imgUrl,
-            trigger: function(res) {
-                // alert('用户点击分享到QQ');
-            },
-            complete: function(res) {
-                // alert(JSON.stringify(res));
-            },
-            success: function(res) {
-                // alert('已分享');
-                var UserInfo = new Object();
-                UserInfo.openid = openid;
-                UserInfo.shareLevel = GlobalLevel;
-                // alert('已分享');
-                ga('send', {
-                    'hitType': 'event', // Required.
-                    'eventCategory': 'wx', // Required.
-                    'eventAction': 'onMenuShareQQ_' + openid, // Required.
-                    'eventLabel': JSON.stringify(UserInfo),
-                    'eventValue': 1
-                });
-            },
-            cancel: function(res) {
-                // alert('已取消');
-            },
-            fail: function(res) {
-                // alert(JSON.stringify(res));
-            }
-        });
-
-        // 2.4 监听“分享到微博”按钮点击、自定义分享内容及分享结果接口
-        wx.onMenuShareWeibo({
-            title: "Core Ball，我已玩到第" + GlobalLevel + "关了，你也来试试吧！",
-            desc: "Core Ball，我已玩到第" + GlobalLevel + "关了，你也来试试吧！",
-            link: gameurl,
-            imgUrl: imgUrl,
-            trigger: function(res) {
-                // alert('用户点击分享到微博');
-            },
-            complete: function(res) {
-                // alert(JSON.stringify(res));
-            },
-            success: function(res) {
-                // alert('已分享');
-                var UserInfo = new Object();
-                UserInfo.openid = openid;
-                UserInfo.shareLevel = GlobalLevel;
-                // alert('已分享');
-                ga('send', {
-                    'hitType': 'event', // Required.
-                    'eventCategory': 'wx', // Required.
-                    'eventAction': 'onMenuShareWeibo_' + openid, // Required.
-                    'eventLabel': JSON.stringify(UserInfo),
-                    'eventValue': 1
-                });
-            },
-            cancel: function(res) {
-                // alert('已取消');
-            },
-            fail: function(res) {
-                // alert(JSON.stringify(res));
-            }
-        });
-
-    });
-});
