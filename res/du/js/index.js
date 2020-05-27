@@ -1,11 +1,11 @@
 $(document).ready(function() {
-    var baseUrl = "http://127.0.0.1:8899/";
+    var baseUrl = "https://www.braveandoutstanding.com:9999/";
     $("#new_content").click(function get_rand_one() {
         var result_message = '';
         var error_message = '';
         $.ajax({
             type : "POST",
-            url : baseUrl + "inspirational/get_rand_one",
+            url : baseUrl + "poisonous_soup/get_rand_one",
             contentType: "application/json; charset=utf-8",
             dataType: "JSON",
             async : true,
@@ -14,7 +14,7 @@ $(document).ready(function() {
                     if (result.success === true) {
                         result_message = result.result;
                         $("#txt_id").html(result.result.id);
-                        $("#txt_name").html(result.result.sentence_string);
+                        $("#txt_name").html(result.result.title_string);
                     }else{
                         error_message = result.errorMsg;
                     }
