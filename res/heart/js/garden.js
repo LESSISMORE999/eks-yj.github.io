@@ -2,7 +2,7 @@
 	        this.x = x;
 	        this.y = y;
 	    };
-		
+
 	    Vector.prototype = {
 	        rotate: function (theta) {
 	            var x = this.x;
@@ -33,7 +33,7 @@
 	            return this;
 	        }
 	    };
-		
+
 	    function Petal(stretchA, stretchB, startAngle, angle, growFactor, bloom) {
 	        this.stretchA = stretchA;
 	        this.stretchB = stretchB;
@@ -68,7 +68,7 @@
 	                this.isfinished = true;
 	            }
 	        }
-	    }
+	    };
 
 	    function Bloom(p, r, c, pc, garden) {
 	        this.p = p;
@@ -102,7 +102,7 @@
 	                this.petals.push(new Petal(Garden.random(Garden.options.petalStretch.min, Garden.options.petalStretch.max), Garden.random(Garden.options.petalStretch.min, Garden.options.petalStretch.max), startAngle + i * angle, angle, Garden.random(Garden.options.growFactor.min, Garden.options.growFactor.max), this));
 	            }
 	        }
-	    }
+	    };
 
 	    function Garden(ctx, element) {
 	        this.blooms = [];
@@ -138,7 +138,7 @@
 	            this.blooms = [];
 	            this.ctx.clearRect(0, 0, this.element.width, this.element.height);
 	        }
-	    }
+	    };
 
 	    Garden.options = {
 	        petalCount: {
